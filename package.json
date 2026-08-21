@@ -1,0 +1,19 @@
+{
+  "name": "spy-chat",
+  "version": "1.0.0",
+  "description": "Private group text and audio chat app - dark spy theme",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.22.2",
+    "socket.io": "^4.8.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
