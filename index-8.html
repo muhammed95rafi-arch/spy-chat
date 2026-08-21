@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPY-CHAT // SECURE CHANNEL</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== LOGIN / ENTRY SCREEN ===== -->
+<div id="entry-screen" class="screen">
+  <div class="scanlines"></div>
+  <div class="entry-box">
+    <div class="crosshair">◎</div>
+    <h1>SPY&#8209;CHAT</h1>
+    <p class="tagline">SECURE CHANNEL // CLEARANCE REQUIRED</p>
+
+    <input type="text" id="codename" placeholder="ENTER CODENAME" maxlength="20" autocomplete="off">
+    <input type="text" id="roomcode" placeholder="ENTER SAFEHOUSE ID" maxlength="20" autocomplete="off">
+
+    <button id="enter-btn">▶ AUTHENTICATE &amp; ENTER</button>
+    <p class="hint">Share the same Safehouse ID with your team to join the same channel.</p>
+  </div>
+</div>
+
+<!-- ===== MAIN CHAT SCREEN ===== -->
+<div id="chat-screen" class="screen hidden">
+  <div class="scanlines"></div>
+
+  <header class="topbar">
+    <div class="brand">◎ SPY&#8209;CHAT <span id="room-label"></span></div>
+    <div class="topbar-right">
+      <span id="status-dot" class="status-dot"></span>
+      <span id="agent-label"></span>
+    </div>
+  </header>
+
+  <div class="main-layout">
+    <!-- ROSTER -->
+    <aside class="roster-panel">
+      <h3>ACTIVE AGENTS</h3>
+      <ul id="roster-list"></ul>
+
+      <h3>VOICE CHANNEL</h3>
+      <button id="voice-toggle" class="voice-btn">🎙 GO LIVE (AUDIO)</button>
+      <div id="voice-status" class="voice-status">OFFLINE</div>
+      <div id="remote-audios"></div>
+    </aside>
+
+    <!-- CHAT -->
+    <section class="chat-panel">
+      <div id="messages" class="messages"></div>
+      <div class="input-row">
+        <input type="text" id="msg-input" placeholder="Transmit message..." autocomplete="off">
+        <button id="send-btn">SEND</button>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
